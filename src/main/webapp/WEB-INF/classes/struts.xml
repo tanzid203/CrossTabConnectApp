@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<constant name="struts.action.excludePattern" value="/rest/.*"
+		/>
+	<package name="default" namespace="/" extends="json-default">
+		<interceptors>
+			<interceptor name="myInterceptor" class="com.tanuj.crosstab.MyInterceptor" />
+			<interceptor-stack name="basicStack">
+				<interceptor-ref name="logger" />
+				<interceptor-ref name="timer" />
+				<interceptor-ref name="params" />
+			</interceptor-stack>
+		</interceptors>
+		
+		<action name="" class="">
+			<result>/Main.jsp</result>
+		</action>
+		<action name="loginView">
+			<result>/Main.jsp</result>
+		</action>
+		<action name="jobPostingsView">
+			<result>/Main.jsp</result>
+		</action>
+		<action name="profilesView">
+			<result>/Main.jsp</result>
+		</action>
+		<action name="appsView">
+			<result>/Main.jsp</result>
+		</action>
+		
+		<action name="SqlAction" class="com.tanuj.crosstab.CloudSqlServlet">
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+			</result>
+		</action>
+		
+		<action name="PrivacyPolicy">
+			<result>/PrivacyPolicy.jsp</result>
+		</action>
+		
+		<action name="upload" class="com.tanuj.crosstab.UploadServlet2">
+		</action>
+		
+		<action name="NewFile.jsp">
+			<result>/NewFile.jsp</result>
+		</action>
+		
+		<action name="OrgChartDemo">
+			<result>/Demo4.jsp</result>
+		</action>
+		<action name="OrgChartDemoLinked">
+			<result>/Demo5.jsp</result>
+		</action>
+		
+		<action name="OrgChartDemo1">
+			<result>/Demo1.jsp</result>
+		</action>
+		
+		<action name="OrgChartDemo2">
+			<result>/Demo3.jsp</result>
+		</action>
+		
+		<action name="Link1">
+			<result>/Link1.jsp</result>
+		</action>
+		
+		<action name="Link2">
+			<result>/Link2.jsp</result>
+		</action>
+		
+		<action name="OrgChart">
+			<result>/OrgChart.jsp</result>
+		</action>
+		
+		<action name="DashboardDemo">
+			<result>/DashboardDemo.jsp</result>
+		</action>
+		
+		<action name="jpList">
+			<result>/jpList.jsp</result>
+		</action>
+		
+		
+	</package>
+	
+</struts>

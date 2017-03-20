@@ -1,0 +1,42 @@
+.animation {
+  -webkit-transition: 1s;
+}
+.animation.ng-enter {
+   -webkit-transform:scale(1);
+    -webkit-transition-duration: 1000ms;
+  opacity: 0;
+}
+.animation.ng-leave {
+  opacity: 1;
+}
+.animation.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.animation.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.angfade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    opacity: 1;
+}
+.angfade.ng-enter,
+.angfade.ng-leave {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.angfade.ng-enter {
+    opacity: 0;
+}
+.angfade.ng-enter-active {
+    opacity: 1;
+}
+.angfade.ng-leave {
+    opacity: 1;
+}
+.angfade.ng-leave-active {
+    opacity: 0;
+}

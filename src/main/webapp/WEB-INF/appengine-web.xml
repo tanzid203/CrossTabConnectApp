@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+	<application>crosstabconnect</application>
+	<version>1</version>
+	<threadsafe>true</threadsafe>
+	<automatic-scaling>
+		<max-concurrent-requests>50</max-concurrent-requests>
+	</automatic-scaling>
+	<use-google-connector-j>true</use-google-connector-j>
+	<system-properties>
+		<property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
+		<property name="ae-cloudsql.cloudsql-database-url" value="jdbc:google:mysql://crosstabconnect:europe-west1:crosstabconnectdb/crosstabconnectdb?user=root&amp;password=root"
+			/>
+		<property name="ae-cloudsql.local-database-url" value="jdbc:mysql://127.0.0.1:3306/crosstabconnectdb?user=root&amp;PASSWORD=root&amp;useSSL=false"
+			/>
+	</system-properties>
+</appengine-web-app>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interceptor-stack name="basicStack">
+	<interceptor-ref name="params" />
+	<interceptor-ref name="logger" />
+	<interceptor-ref name="exception" />
+	<interceptor-ref name="prepare" />
+	<interceptor-ref name="checkbox" />
+	<interceptor-ref name="conversionError" />
+</interceptor-stack>

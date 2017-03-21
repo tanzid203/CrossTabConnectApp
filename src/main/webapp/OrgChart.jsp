@@ -1299,7 +1299,7 @@
 			} );
 
 			$( '.node' ).mouseenter( function () {
-				$( '#' + this.id ).tooltipster( 'content', '_$t' + this.id + '_$ta' ).tooltipster( 'open' );
+				$( '#' + this.id ).tooltipster( 'content', '<b>' + this.id + '</b>' ).tooltipster( 'open' );
 			} );
 
 			$( '.node' ).mouseleave( function () {
@@ -1329,7 +1329,7 @@
 					logging : true,
 					onrendered : function ( canvas ) {
 
-						$( "#orgChartSketchDivBody" ).html( "_$tag__________________________$tag____" );
+						$( "#orgChartSketchDivBody" ).html( "<canvas id=\"orgChartSketch\"></canvas>" );
 
 						var sketchCanvas = document.getElementById( 'orgChartSketch' );
 						var sketchContext = sketchCanvas.getContext( '2d' );
@@ -1381,7 +1381,7 @@
 					logging : true,
 					onrendered : function ( canvas ) {
 
-						$( "#orgChartSketchDivBody" ).html( "_$tag__________________________$tag____" );
+						$( "#orgChartSketchDivBody" ).html( "<canvas id=\"orgChartSketch\"></canvas>" );
 
 						var sketchCanvas = document.getElementById( 'orgChartSketch' );
 						var sketchContext = sketchCanvas.getContext( '2d' );
@@ -1436,7 +1436,7 @@
 					logging : true,
 					onrendered : function ( canvas ) {
 
-						$( "#orgChartSketchDivBody" ).html( "_$tag__________________________$tag____" );
+						$( "#orgChartSketchDivBody" ).html( "<canvas id=\"orgChartSketch\"></canvas>" );
 
 						var sketchCanvas = document.getElementById( 'orgChartSketch' );
 						var sketchContext = sketchCanvas.getContext( '2d' );
@@ -1502,7 +1502,7 @@
 
 						var myImage = sketchCanvas.toDataURL( "image/png" );
 						var tWindow = window.open( "" );
-						$( tWindow.document.body ).html( "<img id='Image' src=" + myImage + " style='width:100%;'>_$tag_" ).ready( function () {
+						$( tWindow.document.body ).html( "<img id='Image' src=" + myImage + " style='width:100%;'></img>" ).ready( function () {
 							tWindow.focus();
 							tWindow.print();
 						} );
@@ -1536,24 +1536,23 @@
 					canvas : scaledCanvas,
 					logging : true,
 					onrendered : function ( canvas ) {
-
-						
+					
 						$( "#orgChartSketchDivBody" ).html(
-								"_$tag________________________________________________________________________________________$tag______________________$ta&nbsp;&nbsp;Marker_$ta" + "&nbsp;&nbsp;&nbsp;"
-										+ "_$tag____________________________________________________________________________________$tag______________________$ta&nbsp;&nbsp;Eraser_$ta" + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-										+ "_$tag______________________________________________________________________________1_$ta" + "&nbsp;" + "_$tag______________________________________________________________________________3_$ta" + "&nbsp;"
-										+ "_$tag______________________________________________________________________________5_$ta" + "&nbsp;" + "_$tag________________________________________________________________________________10_$ta" + "&nbsp;"
-										+ "_$tag________________________________________________________________________________30_$ta" + "&nbsp;" + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-										+ "_$tag_______________________________________________________________________________________________________________________&nbsp;&nbsp;_$ta" + "&nbsp;"
-										+ "_$tag________________________________________________________________________________________________________________________&nbsp;&nbsp;_$ta" + "&nbsp;"
-										+ "_$tag_________________________________________________________________________________________________________________________&nbsp;&nbsp;_$ta" + "&nbsp;"
-										+ "_$tag__________________________________________________________________________________________________________________________&nbsp;&nbsp;_$ta" + "&nbsp;"
-										+ "_$tag_________________________________________________________________________________________________________________________&nbsp;&nbsp;_$ta" + "&nbsp;"
-										+ "_$tag________________________________________________________________________________________________________________________&nbsp;&nbsp;_$ta" + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-										+ "_$tag__________________________________________________________________$tag_______________________$ta&nbsp;&nbsp;Reset_$ta" + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-										+ "_$tag____________________________________________________________________$tag_____________________$ta&nbsp;&nbsp;Save as Image_$ta" + "&nbsp;&nbsp;"
-										+ "_$tag_________________________________________$tag__________________________$ta&nbsp;&nbsp;Save as PDF_$ta" + "&nbsp;" + "_$ta_$ta" + "_$tag__________________________$tag____" );
-						
+								"<a id=\"setMarker\" href=\"#orgChartSketch\" data-color=\"#000000\" class=\"btn btn-dark \"><i class=\"fa fa-pencil\"></i>&nbsp;&nbsp;Marker</a>" + "&nbsp;&nbsp;&nbsp;"
+										+ "<a id=\"setEraser\" href=\"#orgChartSketch\" data-color=\"#fff\" class=\"btn btn-dark\"><i class=\"fa fa-eraser\"></i>&nbsp;&nbsp;Eraser</a>" + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+										+ "<a id=\"setSize1\" href=\"#orgChartSketch\" data-size=\"1\" class=\"btn btn-dark\">1</a>" + "&nbsp;" + "<a id=\"setSize3\" href=\"#orgChartSketch\" data-size=\"3\" class=\"btn btn-dark\">3</a>" + "&nbsp;"
+										+ "<a id=\"setSize5\" href=\"#orgChartSketch\" data-size=\"5\" class=\"btn btn-dark\">5</a>" + "&nbsp;" + "<a id=\"setSize10\" href=\"#orgChartSketch\" data-size=\"10\" class=\"btn btn-dark\">10</a>" + "&nbsp;"
+										+ "<a id=\"setSize30\" href=\"#orgChartSketch\" data-size=\"30\" class=\"btn btn-dark\">30</a>" + "&nbsp;" + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+										+ "<a id=\"setColorRed\" href=\"#orgChartSketch\" data-color=\"#af2121\" class=\"btn btn-dark\" style=\"background: #af2121;\">&nbsp;&nbsp;</a>" + "&nbsp;"
+										+ "<a id=\"setColorBlue\" href=\"#orgChartSketch\" data-color=\"#244ea0\" class=\"btn btn-dark\" style=\"background: #244ea0;\">&nbsp;&nbsp;</a>" + "&nbsp;"
+										+ "<a id=\"setColorGreen\" href=\"#orgChartSketch\" data-color=\"#3f931c\" class=\"btn btn-dark\" style=\"background: #3f931c;\">&nbsp;&nbsp;</a>" + "&nbsp;"
+										+ "<a id=\"setColorYellow\" href=\"#orgChartSketch\" data-color=\"#f2ee0c\" class=\"btn btn-dark\" style=\"background: #f2ee0c;\">&nbsp;&nbsp;</a>" + "&nbsp;"
+										+ "<a id=\"setColorBlack\" href=\"#orgChartSketch\" data-color=\"#000000\" class=\"btn btn-dark\" style=\"background: #000000;\">&nbsp;&nbsp;</a>" + "&nbsp;"
+										+ "<a id=\"setColorGrey\" href=\"#orgChartSketch\" data-color=\"#7c7c7c\" class=\"btn btn-dark\" style=\"background: #7c7c7c;\">&nbsp;&nbsp;</a>" + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+										+ "<a id=\"resetCanvas\" style=\"display: none;\" class=\"btn btn-dark\"><i class=\"fa fa-refresh\"></i>&nbsp;&nbsp;Reset</a>" + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+										+ "<a id=\"downloadImage\" href=\"#orgChartSketch\" class=\"btn btn-dark\"><i class=\"fa fa-image\"></i>&nbsp;&nbsp;Save as Image</a>" + "&nbsp;&nbsp;"
+										+ "<a id=\"downloadPDF\" class=\"btn btn-dark\"><i class=\"fa fa-file-pdf-o\"></i>&nbsp;&nbsp;Save as PDF</a>" + "&nbsp;" + "<br><br>" + "<canvas id=\"orgChartSketch\"></canvas>" );
+									
 
 						var sketchCanvas = document.getElementById( 'orgChartSketch' );
 						var sketchContext = sketchCanvas.getContext( '2d' );

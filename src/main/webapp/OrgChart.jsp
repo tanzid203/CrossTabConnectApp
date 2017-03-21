@@ -1489,7 +1489,7 @@
 					logging : true,
 					onrendered : function ( canvas ) {
 
-						$( "#orgChartSketchDivBody" ).html( "_$tag__________________________$tag____" );
+						$( "#orgChartSketchDivBody" ).html( "<canvas id=\"orgChartSketch\"></canvas>" );
 
 						var sketchCanvas = document.getElementById( 'orgChartSketch' );
 						var sketchContext = sketchCanvas.getContext( '2d' );
